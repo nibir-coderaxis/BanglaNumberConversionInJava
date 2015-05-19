@@ -1,10 +1,6 @@
 package com.bangladigit.conversion;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 public class BanglaDigitConversion {
 
@@ -101,48 +97,7 @@ public class BanglaDigitConversion {
 		return '0';
 	}
 
-	public static String isNearby(String timeStampDate) {
-		try {
-			SimpleDateFormat dateFormat = new SimpleDateFormat(
-					"yyyy-MM-dd hh:mm:ss");
-			Date parsedDate = dateFormat.parse(timeStampDate);
-			java.sql.Timestamp time = new java.sql.Timestamp(
-					parsedDate.getTime());
-			Date date = new Date(time.getTime());
-
-			SimpleDateFormat dateFormatt = new SimpleDateFormat(
-					"dd-MMM-yy hh.mm.ss.S aa");
-			String formattedDate = dateFormatt.format(date).toString();
-
-			DateFormat dateFormatss = new SimpleDateFormat("dd-MM-yyyy");
-			Calendar cal = Calendar.getInstance();
-
-			Calendar calR = Calendar.getInstance();
-			calR.add(Calendar.DATE, 1);
-
-			SimpleDateFormat dateFormattt = new SimpleDateFormat("hh.mm aa");
-			String formattedDatet = dateFormattt.format(date).toString();
-
-			if (dateFormatss.format(date).compareTo(
-					dateFormatss.format(cal.getTime())) == 0) {
-				return "Today at " + formattedDatet;
-			}
-
-			else if (dateFormatss.format(calR.getTime()).compareTo(
-					dateFormatss.format(date)) == 0) {
-
-				return "Tomorrow at " + formattedDatet;
-
-			} else {
-
-				return formattedDate;
-			}
-
-		} catch (Exception e) {
-			// TODO: handle exception
-			return null;
-		}
-	}
+	
 
 	
 
