@@ -1,19 +1,12 @@
-package com.test;
+package com.bangladigit.conversion;
 
-import java.awt.List;
-import java.io.ObjectInputStream.GetField;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.Signature;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Test {
+public class BanglaDigitConversion {
 
 	/**
 	 * @param args
@@ -151,23 +144,6 @@ public class Test {
 		}
 	}
 
-	public static String FormattedDateForToday() {
-		Calendar cal = Calendar.getInstance();
-
-		int year = cal.get(Calendar.YEAR);
-		int month = cal.get(Calendar.MONTH);
-		int day = cal.get(Calendar.DAY_OF_MONTH);
-		SimpleDateFormat dateFormat = new SimpleDateFormat("hh.mm aa");
-		String formattedDate = dateFormat.format(new Date()).toString();
-
-		return theMonth(month) + " " + day + ", " + year + ", " + formattedDate;
-	}
-
-	public static String theMonth(int month) {
-		String[] monthNames = { "January", "February", "March", "April", "May",
-				"June", "July", "August", "September", "October", "November",
-				"December" };
-		return monthNames[month];
-	}
+	
 
 }
